@@ -8,7 +8,8 @@ void print_buffer(char *buffer, int *index);
  * Return: printed characters
  */
 
-int _printf(const char *format, ...){
+int _printf(const char *format, ...)
+{
 	int i, printed = 0, printed_characters = 0;
 	int precision, width, size, flags, buffer_index = 0;
 	va_list args;
@@ -58,8 +59,9 @@ int _printf(const char *format, ...){
  * @index: index of the characters
  */
 
-void print_buffer(char *buffer, int *index){
+void print_buffer(char *buffer, int *index)
+{
 	if (*index > 0)
 		write(1, buffer, *index);
-	index = 0;
+	*index = 0;
 }

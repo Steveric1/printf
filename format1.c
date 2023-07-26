@@ -123,10 +123,10 @@ int print_int(va_list args, char buffer[],
 	if (n == 0)
 		buffer[i--] = '0';
 
-	buffer[BUFF_SIZE] = '\0';
+	buffer[BUFF_SIZE - 1] = '\0';
 	num = (unsigned long int)n;
 
-	if (num <= 0)
+	if (n < 0)
 	{
 		num = (unsigned long int)((-1) * n);
 		isNegative = 1;
@@ -135,7 +135,7 @@ int print_int(va_list args, char buffer[],
 	while (num > 0)
 	{
 		buffer[i--] = (num % 10) + '0';
-		num %= 10;
+		num /= 10;
 	}
 	i++;
 
@@ -181,7 +181,7 @@ int print_binary(va_list args, char buffer[],
 	{
 		sum += a[i];
 
-		if (sum || i == 32)
+		if (sum || i == 31)
 		{
 			char k = '0' + a[i];
 

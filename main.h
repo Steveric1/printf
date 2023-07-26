@@ -108,10 +108,11 @@ int handle_write_char(char c, char buffer[],
 	int flags, int width, int precision, int size);
 int write_number(int is_positive, int index, char buffer[],
 	int flags, int width, int precision, int size);
-int write_num(int i, char buffer[], int flags, int width, int precision,
-	int len, char padding, char extra_char);
+int write_num(int ind, char buffer[],
+        int flags, int width, int prec,
+        int length, char padd, char extra_c);
 int write_pointer(char buffer[], int index, int len,
-	int width, int flags, char padding, char extra_char, int padd_start);
+        int width, int flags, char padd, char extra_c, int padd_start);
 
 int write_unsignd(int is_negative, int index,
 char buffer[],

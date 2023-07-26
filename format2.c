@@ -61,7 +61,7 @@ int print_octal(va_list args, char buffer[],
 	if (n == 0)
 		buffer[i--] = '0';
 
-	buffer[BUFF_SIZE] = '\0';
+	buffer[BUFF_SIZE - 1] = '\0';
 
 	while (n > 0)
 	{
@@ -141,7 +141,7 @@ int print_hexa(va_list args, char map_to[], char buffer[],
 	if (n == 0)
 		buffer[i--] = '0';
 
-	buffer[BUFF_SIZE] = '\0';
+	buffer[BUFF_SIZE - 1] = '\0';
 
 	while (n > 0)
 	{
